@@ -13,8 +13,8 @@ class client(object):
     
     #@staticmethod
     def __load_global_model(self):
-        global_G_state = torch.load('results/fed_pilot_gan/cache/global_G_state_%d.pkl'%n_d)
-        global_D_state = torch.load('results/fed_pilot_gan/cache/global_D_state_%d.pkl'%n_d)
+        global_G_state = torch.load('results/pilot_gan/U_4/fedpilotgan/cache/global_G_state_%d.pkl'%n_d)
+        global_D_state = torch.load('results/pilot_gan/U_4/fedpilotgan/cache/global_D_state_%d.pkl'%n_d)
         model_G, model_D = self.__init_client()
         model_G.load_state_dict(global_G_state)
         model_D.load_state_dict(global_D_state)
@@ -105,4 +105,4 @@ class client(object):
     def run(self, X_train, stats, e, nc):
         model_G, model_D = self.__load_global_model()
         grads = self.__train(model_G, model_D, X_train, stats, e, nc)
-        torch.save(grads, 'results/fed_pilot_gan/cache/grads_D_{}_{}.pkl'.format(self.rank,n_d))
+        torch.save(grads, 'results/pilot_gan/U_4/fedpilotgan/cache/grads_D_{}_{}.pkl'.format(self.rank,n_d))

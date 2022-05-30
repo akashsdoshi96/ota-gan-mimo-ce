@@ -7,8 +7,8 @@ class server(object):
         # data loader
         self.X_train = dataset.train_CDL_A
         self.dataset = dataset
-        self.path_G = 'results/fed_pilot_gan/cache/global_G_state_%d.pkl'%n_d
-        self.path_D = 'results/fed_pilot_gan/cache/global_D_state_%d.pkl'%n_d
+        self.path_G = 'results/pilot_gan/U_4/fedpilotgan/cache/global_G_state_%d.pkl'%n_d
+        self.path_D = 'results/pilot_gan/U_4/fedpilotgan/cache/global_D_state_%d.pkl'%n_d
         self.model_G, self.model_D = self.__init_server()
         self.G_solver = optim.RMSprop(self.model_G.parameters(), lr=5e-5)
         self.D_solver = optim.SGD(self.model_D.parameters(), lr=5e-5)
@@ -18,7 +18,7 @@ class server(object):
         D = critic().type(dtype) 
         torch.save(G.state_dict(), self.path_G)
         torch.save(D.state_dict(), self.path_D)
-        torch.save(G.state_dict(), 'results/fed_pilot_gan/cache/checkpoints/n_d_%d/global_G_state0.pkl'%n_d)
+        torch.save(G.state_dict(), 'results/pilot_gan/U_4/fedpilotgan/cache/checkpoints/n_d_%d/global_G_state0.pkl'%n_d)
         return G, D
     
     def return_datasets(self):
@@ -31,7 +31,7 @@ class server(object):
     def __load_grads(self):
         grads_info = []
         for s in range(self.size):
-            grads_info.append(torch.load('results/fed_pilot_gan/cache/grads_D_{}_{}.pkl'.format(s,n_d)))
+            grads_info.append(torch.load('results/pilot_gan/U_4/fedpilotgan/cache/grads_D_{}_{}.pkl'.format(s,n_d)))
         return grads_info
     
     def generate_rx_signal(self, G_sample, noise_var, stats):
@@ -106,8 +106,8 @@ class server(object):
         gradients = self.__average_grads(grads_info)
         #Update global discriminator and train global generator
         self.__step(gradients,iteration)
-        torch.save(self.model_G.state_dict(), 'results/fed_pilot_gan/cache/global_G_state_%d.pkl'%n_d)
-        torch.save(self.model_D.state_dict(), 'results/fed_pilot_gan/cache/global_D_state_%d.pkl'%n_d)
+        torch.save(self.model_G.state_dict(), 'results/pilot_gan/U_4/fedpilotgan/cache/global_G_state_%d.pkl'%n_d)
+        torch.save(self.model_D.state_dict(), 'results/pilot_gan/U_4/fedpilotgan/cache/global_D_state_%d.pkl'%n_d)
         
         if epoch%10 == 0 and (iteration+1)%25 == 0:
-            torch.save(self.model_G.state_dict(), 'results/fed_pilot_gan/cache/checkpoints/n_d_%d/global_G_state%d.pkl'%(n_d,epoch))
+            torch.save(self.model_G.state_dict(), 'results/pilot_gan/U_4/fedpilotgan/cache/checkpoints/n_d_%d/global_G_state%d.pkl'%(n_d,epoch))
