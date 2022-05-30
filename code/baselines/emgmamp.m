@@ -1,4 +1,6 @@
 clc; clear;
+addpath('EMGMAMP')
+addpath('main')
 H_ex = load('../../data/H_16x64_MIMO_CDL_A_ULA_test.mat').hest;
 N_t = 64;
 N_r = 16;
