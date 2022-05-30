@@ -1,4 +1,4 @@
-Implementation of "Towards an Over-the-air design of GAN training for mmWave MIMO Channel Estimation"
+Implementation of "Over-the-Air design of GAN Training for mmWave MIMO Channel Estimation"
 
 Link to arXiv Preprint: https://arxiv.org/pdf/2205.12445
 
