@@ -31,7 +31,7 @@ class server(object):
     def __load_grads(self):
         grads_info = []
         for s in range(self.size):
-            grads_info.append(torch.load('results/fed_pilot_gan/cache/grads_D_{}_%d.pkl'%n_d.format(s)))
+            grads_info.append(torch.load('results/fed_pilot_gan/cache/grads_D_{}_{}.pkl'.format(s,n_d)))
         return grads_info
     
     def generate_rx_signal(self, G_sample, noise_var, stats):

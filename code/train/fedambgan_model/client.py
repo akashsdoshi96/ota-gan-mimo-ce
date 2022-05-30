@@ -105,4 +105,4 @@ class client(object):
     def run(self, X_train, stats, e, nc):
         model_G, model_D = self.__load_global_model()
         grads = self.__train(model_G, model_D, X_train, stats, e, nc)
-        torch.save(grads, 'results/fed_pilot_gan/cache/grads_D_{}_%d.pkl'%n_d.format(self.rank))
+        torch.save(grads, 'results/fed_pilot_gan/cache/grads_D_{}_{}.pkl'.format(self.rank,n_d))
