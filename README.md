@@ -11,7 +11,8 @@ Code, results and data is structured with reference to the paper as given below:
 /data - Contains all the test data files, DFT matrices and (precoder, combiner, symbol) triplet used for Pilot GAN trainings. Download the training data from the URL given in /data/README.md
 
 Code references:<br />
-[1] https://github.com/eriklindernoren/PyTorch-GAN/blob/master/implementations/wgan/wgan.py <br />
+[1] https://github.com/eriklindernoren/PyTorch-GAN/ <br />
 [2] https://github.com/nitinjmyers/Globecom2018_spatial_Zadoff_Chu/blob/master/OMPf.m <br />
 [3] https://github.com/LeiDu-dev/FedSGD <br />
 [4] https://sourceforge.net/projects/gampmatlab/
+[5] https://machinelearningmastery.com/how-to-develop-a-conditional-generative-adversarial-network-from-scratch/
