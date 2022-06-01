@@ -44,7 +44,7 @@ for b = 1:length(N_p_vec)
                 H_est = reshape(A2*reshape(xhat,N_r,N_t)*A1',N_r*N_t,1);
                 % Display the MSE
                 nmseGAMP = (norm(vec_H_single-H_est)/norm(vec_H_single))^2;
-                nmse_arr(k,i) = nmse_arr(k,i) + nmseGAMP;
+                nmse_arr(k,i) = nmse_arr(k,i) + nmseGAMP; 
             end
         end
     end
