@@ -16,5 +16,5 @@ Code references:
 [2] https://github.com/nitinjmyers/Globecom2018_spatial_Zadoff_Chu/blob/master/OMPf.m <br />
 [3] https://github.com/LeiDu-dev/FedSGD <br />
 [4] https://sourceforge.net/projects/gampmatlab/ <br />
-[5] https://machinelearningmastery.com/how-to-develop-a-conditional-generative-adversarial-network-from-scratch/
+[5] https://machinelearningmastery.com/how-to-develop-a-conditional-generative-adversarial-network-from-scratch/ <br />
 [6] https://www.mathworks.com/help/5g/ref/nrperfectchannelestimate.html#mw_c75b5d3d-f72f-41a9-b910-e7fc1fd8c4c7
