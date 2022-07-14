@@ -107,7 +107,6 @@ def compute_gradient_penalty(D, real_samples, fake_samples):
     gradient_penalty = ((gradients.norm(2, dim=1) - 1) ** 2).mean()
     return gradient_penalty
 
-pdb.set_trace()
 for it in range(60000):
     if reset_optim_D:
         D_solver = optim.RMSprop(D.parameters(), lr=lr)
