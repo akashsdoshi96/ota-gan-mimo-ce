@@ -2,7 +2,7 @@
 
 Link to arXiv Preprint: https://arxiv.org/pdf/2205.12445.
 
-Link to IEEE Xplore: https://ieeexplore.ieee.org/document/9953094
+Published in IEEE Journal of Sel. Areas in Info Theory. Early Access available at: https://ieeexplore.ieee.org/document/9953094
 
 Code, results and data is structured with reference to the paper as given below:
 
